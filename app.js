@@ -15,9 +15,9 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-// const username =process.env.USERNAME_DB;
-// const password = process.env.PASSWORD;
-mongoose.connect("mongodb+srv://Dharani:Atlas@cluster0.65wi1et.mongodb.net/todolistDB");
+const username =process.env.USERNAME_DB;
+const password = process.env.PASSWORD;
+mongoose.connect("mongodb+srv://" + username+ ":"+password + "@cluster0.65wi1et.mongodb.net/todolistDB");
 
 const itemsSchema={
   name: String
